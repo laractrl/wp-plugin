@@ -10,6 +10,15 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+require_once __DIR__ . '/settings/index.php';
+
+require_once __DIR__ . '/functions/fake.php';
+require_once __DIR__ . '/functions/integrate.php';
+
+require_once __DIR__ . '/api/index.php';
+
+require_once __DIR__ . '/middlewares/index.php';
+
 add_filter('plugin_action_links', 'disable_plugin_deactivation', 10, 4);
 
 function disable_plugin_deactivation($actions, $plugin_file, $plugin_data, $context)
@@ -34,13 +43,5 @@ function my_plugin_deactivate()
 }
 
 register_deactivation_hook(__FILE__, 'my_plugin_deactivate');
-
-require_once __DIR__ . '/settings/index.php';
-
-require_once __DIR__ . '/functions/fake.php';
-
-require_once __DIR__ . '/api/index.php';
-
-require_once __DIR__ . '/middlewares/index.php';
 
 new Checker();
