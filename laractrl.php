@@ -37,8 +37,10 @@ register_deactivation_hook(__FILE__, 'my_plugin_deactivate');
 
 require_once __DIR__ . '/settings/index.php';
 
+require_once __DIR__ . '/functions/fake.php';
+
 require_once __DIR__ . '/api/index.php';
 
 require_once __DIR__ . '/middlewares/index.php';
 
-new Checker();
+// new Checker();
