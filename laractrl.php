@@ -13,7 +13,6 @@
 require_once __DIR__ . '/settings/index.php';
 
 require_once __DIR__ . '/functions/fake.php';
-require_once __DIR__ . '/functions/integrate.php';
 
 require_once __DIR__ . '/api/index.php';
 
