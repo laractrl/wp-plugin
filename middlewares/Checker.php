@@ -33,8 +33,6 @@ class Checker
                     return $this->locked($body);
                     exit;
                 }
-            } else {
-                update_option('laractrl_status', 'true');
             }
         }
     }
@@ -42,7 +40,6 @@ class Checker
     public function checkLocaly()
     {
         if (get_option('laractrl_status', 'true') == 'true') {
-            update_option('laractrl_status', 'true');
             return true;
         } else {
             return false;
