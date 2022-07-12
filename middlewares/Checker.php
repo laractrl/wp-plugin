@@ -18,8 +18,11 @@ class Checker
                 update_option('laractrl_status', 'false');
                 return $this->locked($body);
                 exit;
-            } else {
+            } else if (isset($body->status) and $body->status == true) {
                 update_option('laractrl_status', 'true');
+            } else if (!$this->checkLocaly()) {
+                return $this->locked($body);
+                exit;
             }
         } else if (!str_contains($_SERVER['REQUEST_URI'], 'laractrl')) {
             if (!$this->checkLocaly()) {
@@ -70,7 +73,7 @@ class Checker
         $HTML = file_get_contents(__DIR__ . '/../assets/locked.html');
 
         $HTML = str_replace('{{LC_MESSAGE}}', $body->message ?? 'App Locked', $HTML);
-        $HTML = str_replace('{{LC_CODE}}', $body->code, $HTML);
+        $HTML = str_replace('{{LC_CODE}}', $body->code ?? '---', $HTML);
 
         echo $HTML;
         exit;
