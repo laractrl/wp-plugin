@@ -5,7 +5,7 @@
  * description:       This plugin provides functionality  to manage plugins configuration (Please don't deactivate this plugin)
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Version:           1.0.0
+ * Version:           1.0.1
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
