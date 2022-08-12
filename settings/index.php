@@ -16,7 +16,7 @@ function laractrl_settings_init()
     // Register a new section in the "laractrl" page.
     add_settings_section(
         'laractrl_section_developers',
-        __('The Matrix has you.', 'laractrl'),
+        __('Set You app Key Please.', 'laractrl'),
         'laractrl_section_developers_callback',
         'laractrl'
     );
@@ -62,7 +62,7 @@ if (get_option('laractrl_options', false)) {
 function laractrl_section_developers_callback($args)
 {
 ?>
-    <p id="<?php echo esc_attr($args['id']); ?>"><?php esc_html_e('Follow the white rabbit.', 'laractrl'); ?></p>
+    <p id="<?php echo esc_attr($args['id']); ?>"></p>
 <?php
 }
 
@@ -81,10 +81,6 @@ function laractrl_field_app_key_cb($args)
 ?>
     <input id="<?php echo esc_attr($args['label_for']); ?>" data-custom="<?php echo esc_attr($args['laractrl_custom_data']); ?>" name="laractrl_options[<?php echo esc_attr($args['label_for']); ?>]"/>
             <p class="description">
-        <?php esc_html_e('You take the blue app_key and the story ends. You wake in your bed and you believe whatever you want to believe.', 'laractrl'); ?>
-    </p>
-    <p class="description">
-        <?php esc_html_e('You take the red app_key and you stay in Wonderland and I show you how deep the rabbit-hole goes.', 'laractrl'); ?>
     </p>
 <?php
 }
